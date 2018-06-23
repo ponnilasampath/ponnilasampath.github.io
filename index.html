@@ -20,8 +20,9 @@
 	Address:<br>
 	<input id="myInput" type="text" name="Address"><br>
 <script>
+	var directionsService;
 	function initMap() {
-	  var directionsService = new google.maps.DirectionsService();
+	  directionsService = new google.maps.DirectionsService();
 	}
 	function testing(){
 		var inputVal = $('#myInput').val()
