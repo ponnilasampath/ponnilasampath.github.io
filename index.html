@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Random Run></title>
+	<meta charset="utf-8">
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+	<header>
+		<h1>Random Route</h1>
+	</header>
+	<h2>Enter your information</h2>
+<main>
+	<form method="post" enctype="text/plain">
+	Address:<br>
+	<input id="myInput" type="text" name="Address"><br>
+<script>
+	function testing(){
+		var inputVal = $('#myInput').val()
+		console.log('Hello World! '+inputVal);
+
+		$.get('https://maps.googleapis.com/maps/api/directions/json?origin=3287%20Wards%20Point%20Orchard%20Lake%20MI%2048324&destination=Wayne%20State%20University&key=AIzaSyB9cYIMPfHYmehA_H9kHwX264B8SicUFvg',function(data){
+			console.log('Got data');
+			console.log(data);
+		})
+	}
+</script>
+	Distance<br>
+	<input type="text" name="Distance"><br>
+	<button type="button" onclick="testing()">Submit</button>
+</form>
+
+</main>
+
+
+
+
