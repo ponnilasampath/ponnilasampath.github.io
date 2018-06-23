@@ -24,21 +24,24 @@
 	function initMap() {
 	  directionsService = new google.maps.DirectionsService();
 	}
-	function testing(){
+	function testing(origin, destination){
 		var inputVal = $('#myInput').val()
 		console.log('Hello World! '+inputVal);
-		directionsService.route({origin:'Detroit',destination:'Grand Rapids'},function(result,status){
-			console.log(result);
-		})
+		getRoute(inputVal,'Detroit');
 		// $.get('https://maps.googleapis.com/maps/api/directions/json?origin=3287%20Wards%20Point%20Orchard%20Lake%20MI%2048324&destination=Wayne%20State%20University&key=AIzaSyB9cYIMPfHYmehA_H9kHwX264B8SicUFvg',function(data){
 		// 	console.log('Got data');
 		// 	console.log(data);
 		// })
 	}
+	function getRoute(origin,destination){
+		directionsService.route({origin:origin,destination:destination},function(result,status){
+			console.log(result);
+		})
+	}
 </script>
 	Distance<br>
 	<input type="text" name="Distance"><br>
-	<button type="button" onclick="testing()">Submit</button>
+	<button type="button" onclick="testing('Detroit','Grand Rapids')">Submit</button>
 </form>
 
 </main>
