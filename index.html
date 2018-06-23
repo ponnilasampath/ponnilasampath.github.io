@@ -34,7 +34,12 @@
 		// })
 	}
 	function getRoute(origin,destination){
-		directionsService.route({origin:origin,destination:destination},function(result,status){
+		directionsService.route(
+			{
+				origin:origin,
+				destination:destination
+				travelMode: 'DRIVING'
+			},function(result,status){
 			console.log(result);
 		})
 	}
