@@ -23,11 +23,13 @@
 	function testing(){
 		var inputVal = $('#myInput').val()
 		console.log('Hello World! '+inputVal);
-
-		$.get('https://maps.googleapis.com/maps/api/directions/json?origin=3287%20Wards%20Point%20Orchard%20Lake%20MI%2048324&destination=Wayne%20State%20University&key=AIzaSyB9cYIMPfHYmehA_H9kHwX264B8SicUFvg',function(data){
-			console.log('Got data');
-			console.log(data);
+		DirectionsService.route({origin:'Detroit',destination:'Grand Rapids'},function(result,status){
+			console.log(result);
 		})
+		// $.get('https://maps.googleapis.com/maps/api/directions/json?origin=3287%20Wards%20Point%20Orchard%20Lake%20MI%2048324&destination=Wayne%20State%20University&key=AIzaSyB9cYIMPfHYmehA_H9kHwX264B8SicUFvg',function(data){
+		// 	console.log('Got data');
+		// 	console.log(data);
+		// })
 	}
 </script>
 	Distance<br>
